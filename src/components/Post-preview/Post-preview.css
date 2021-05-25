@@ -1,0 +1,44 @@
+.post-preview-container {
+  box-sizing: border-box;
+  width: 70%;
+  color: white;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.pagination-container {
+  margin: auto;
+  margin-top: 48px;
+  background-color: white;
+  box-shadow: 0px 0px 3px white;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.Mui-selected:hover {
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 500px) {
+  .post-preview-container {
+    width: 100%;
+  }
+  .spacer {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .post-preview-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-height: 900px) {
+  .pagination-container {
+    margin: auto;
+    margin-top: 24px;
+  }
+}

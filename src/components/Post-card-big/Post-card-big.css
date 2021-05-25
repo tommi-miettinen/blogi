@@ -1,0 +1,82 @@
+.post-card-big {
+  color: black;
+  box-sizing: border-box;
+  display: flex;
+  border-radius: 3px;
+  width: 100%;
+  background-color: white;
+  height: 300px;
+  box-shadow: 0px 0px 5px white;
+  overflow: hidden;
+}
+
+.post-header {
+  margin-right: 30px;
+  margin-left: 30px;
+  font-weight: 100;
+  text-align: left;
+}
+
+.post-container {
+  border-left: 1px solid lightgrey;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 50%;
+}
+
+.post-content {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 93%;
+  height: 12px;
+  transition: 0.5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.image-container-big {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  min-width: 50%;
+}
+
+.image-container-big:hover .overlay {
+  opacity: 1;
+}
+
+.image-big {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+  .post-card-big {
+    height: 350px;
+    flex-direction: column;
+  }
+  .image-big {
+    width: 100%;
+  }
+  .image-container-big {
+    height: 50%;
+  }
+}

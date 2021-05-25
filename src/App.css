@@ -4,59 +4,74 @@
     url(./fonts/RobotoCondensed-Regular.ttf) format("truetype");
 }
 
-body {
-  background-image: url("./images/1295942.jpg");
+* {
   font-family: Roboto;
 }
 
-.home:hover {
-  cursor: pointer;
-}
-
-.post-preview-container {
-  width: 70%;
-  color: white;
-  margin: auto;
-  margin-top: 48px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+body {
+  background-image: url("./images/1295942.jpg");
+  margin: 0px;
 }
 
 .tox-notifications-container {
   display: none;
 }
 
-.editor-container {
-  border-radius: 3px;
-  background-color: white;
-  width: 50%;
-  box-shadow: 0px 0px 5px white;
+.container {
+  width: 80%;
+  margin: auto;
+  margin-top: 48px;
 }
 
-.post-preview {
-  display: flex;
+.button {
+  text-align: center;
+  background-color: #802c6e;
+  border: 1px solid #802c6e;
+  padding: 12px;
   border-radius: 3px;
-  width: 100%;
-  background-color: white;
-  height: 300px;
-  margin-bottom: 24px;
-  box-shadow: 0px 0px 5px white;
-  overflow: hidden;
+  color: white;
+  font-weight: 100;
+  width: 150px;
+  font-family: "Roboto";
+  margin-left: auto;
+  margin-right: 10px;
 }
 
-.post-preview-small {
-  display: flex;
-  flex-direction: column;
-  border-radius: 3px;
-  background-color: white;
-  width: 50%;
-  height: 350px;
-  box-shadow: 0px 0px 5px white;
-  overflow: hidden;
-}
-
-.btn:hover {
+.button:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1400px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-height: 900px) {
+  .container {
+    margin-top: 24px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    width: 95%;
+  }
+  .header {
+    display: none;
+  }
+  .editor-container {
+    margin-top: 0px;
+  }
 }

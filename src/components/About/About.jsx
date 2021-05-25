@@ -1,0 +1,17 @@
+import "./About.css";
+
+const About = () => (
+  <div className="about">
+    <p>{`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed. Ornare massa eget egestas purus. Erat velit scelerisque in dictum non. Diam quam nulla porttitor massa id neque aliquam. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Feugiat nisl pretium fusce id velit ut tortor pretium. Lacus viverra vitae congue eu consequat ac felis. Felis eget velit aliquet sagittis id. Ut venenatis tellus in metus vulputate. Aliquet bibendum enim facilisis gravida neque convallis a. Sit amet dictum sit amet justo.
+
+Eget nunc lobortis mattis aliquam faucibus purus. Ipsum dolor sit amet consectetur adipiscing. Risus nullam eget felis eget. Massa ultricies mi quis hendrerit dolor magna eget est lorem. Pellentesque id nibh tortor id aliquet. Molestie at elementum eu facilisis sed odio morbi quis. Morbi enim nunc faucibus a pellentesque sit amet. Tincidunt vitae semper quis lectus. Aliquet risus feugiat in ante. Id leo in vitae turpis massa sed elementum.
+
+Id leo in vitae turpis. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Elit at imperdiet dui accumsan sit amet nulla facilisi morbi. Commodo quis imperdiet massa tincidunt nunc. Faucibus in ornare quam viverra. Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Sed faucibus turpis in eu mi bibendum neque egestas congue. Pretium nibh ipsum consequat nisl vel pretium lectus quam id. Libero enim sed faucibus turpis in. Ultricies lacus sed turpis tincidunt. Varius morbi enim nunc faucibus a pellentesque sit amet.
+
+Elit duis tristique sollicitudin nibh sit amet commodo. Vel eros donec ac odio tempor. Sed augue lacus viverra vitae congue eu. Laoreet non curabitur gravida arcu ac tortor dignissim convallis aenean. Egestas sed sed risus pretium quam vulputate dignissim. Vitae tortor condimentum lacinia quis vel eros. Id consectetur purus ut faucibus pulvinar elementum integer enim neque. In nibh mauris cursus mattis molestie a iaculis at erat. Venenatis tellus in metus vulputate. Augue eget arcu dictum varius duis at. Fames ac turpis egestas sed tempus urna et pharetra. Sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum. Elementum integer enim neque volutpat ac tincidunt vitae semper. Bibendum est ultricies integer quis auctor elit sed vulputate. Lectus sit amet est placerat in egestas. Tellus integer feugiat scelerisque varius morbi enim. Integer feugiat scelerisque varius morbi enim nunc faucibus. Arcu vitae elementum curabitur vitae nunc sed velit dignissim sodales. Nunc id cursus metus aliquam eleifend mi in. In fermentum et sollicitudin ac orci phasellus.
+
+Eget duis at tellus at urna. A scelerisque purus semper eget duis at tellus at. Placerat in egestas erat imperdiet sed euismod nisi porta. In mollis nunc sed id semper. Etiam sit amet nisl purus in mollis nunc. Sed adipiscing diam donec adipiscing tristique risus nec feugiat. Lacus viverra vitae congue eu consequat ac felis donec. In cursus turpis massa tincidunt dui ut ornare. At elementum eu facilisis sed odio morbi quis commodo odio. Viverra mauris in aliquam sem fringilla ut morbi. Accumsan sit amet nulla facilisi morbi tempus iaculis urna id. Dui id ornare arcu odio.`}</p>
+  </div>
+);
+
+export default About;
