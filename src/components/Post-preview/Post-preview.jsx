@@ -50,7 +50,7 @@ const PostPreview = (props) => {
 
   const fetchPosts = async () => {
     try {
-      const result = await axios.get("http://localhost:8080/posts");
+      const result = await axios.get("/api/posts");
       setPosts(result.data);
     } catch (err) {
       console.log(err);
@@ -59,7 +59,7 @@ const PostPreview = (props) => {
 
   const deletePost = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/posts/${id}`, {
+      await axios.delete(`/api/posts/${id}`, {
         headers: { authorization: localStorage.token },
       });
       fetchPosts();

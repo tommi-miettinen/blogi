@@ -2,20 +2,21 @@ import { useState } from "react";
 import axios from "axios";
 import "./Login-form.css";
 
-const LoginForm = ({ userExists, setIsLoggedIn }) => {
+const LoginForm = ({ userExists, setIsLoggedIn, history }) => {
   const [loginError, setLoginError] = useState(false);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
   const login = async () => {
     try {
-      const result = await axios.post("http://localhost:8080/login", {
+      const result = await axios.post("/api/login", {
         password,
         email,
       });
       if (result.data) {
         localStorage.token = result.data;
         setIsLoggedIn(true);
+        history.push("/");
       }
     } catch (err) {
       setLoginError(true);
@@ -25,7 +26,7 @@ const LoginForm = ({ userExists, setIsLoggedIn }) => {
 
   const createUser = async () => {
     try {
-      await axios.post("http://localhost:8080/users", {
+      await axios.post("/api/users", {
         password,
         email,
       });
@@ -34,8 +35,14 @@ const LoginForm = ({ userExists, setIsLoggedIn }) => {
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      userExists ? login() : createUser();
+    }
+  };
+
   return (
-    <div className="login-form-container">
+    <div className="login-form-container" onKeyPress={(e) => handleKeyPress(e)}>
       <div className="login-form">
         <label>Sähköposti</label>
         <input

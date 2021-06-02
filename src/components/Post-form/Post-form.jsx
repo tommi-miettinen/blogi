@@ -20,9 +20,7 @@ const PostForm = ({ history, match, setIsLoggedIn }) => {
 
   const fetchPost = async () => {
     try {
-      const result = await axios.get(
-        `http://localhost:8080/posts/${match.url.split("/")[2]}`
-      );
+      const result = await axios.get(`/api/posts/${match.url.split("/")[2]}`);
       setTitle(result.data.title);
       setImageUrl(result.data.imageUrl);
       setContent(result.data.content);
@@ -37,7 +35,7 @@ const PostForm = ({ history, match, setIsLoggedIn }) => {
   const sendPost = async () => {
     try {
       const data = { title, content, imageUrl };
-      await axios.post("http://localhost:8080/posts", data, {
+      await axios.post("/api/posts", data, {
         headers: { authorization: localStorage.token },
       });
       history.push("/");
@@ -50,13 +48,9 @@ const PostForm = ({ history, match, setIsLoggedIn }) => {
   const editPost = async () => {
     try {
       const data = { title, content, imageUrl };
-      await axios.patch(
-        `http://localhost:8080/posts/${match.url.split("/")[2]}`,
-        data,
-        {
-          headers: { authorization: localStorage.token },
-        }
-      );
+      await axios.patch(`/api/posts/${match.url.split("/")[2]}`, data, {
+        headers: { authorization: localStorage.token },
+      });
       history.push("/");
     } catch (err) {
       if (err.response.status === 403) logout(setIsLoggedIn);

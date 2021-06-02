@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
+import placeholder from "../../images/placeholder.png";
 import ReactHtmlParser from "react-html-parser";
 import axios from "axios";
 
 import "./Post.css";
 
 const Post = ({ match }) => {
-  const [postData, setPostData] = useState("");
+  const [postData, setPostData] = useState({});
 
   useEffect(() => {
     fetchPost();
@@ -14,10 +15,10 @@ const Post = ({ match }) => {
   const fetchPost = async () => {
     try {
       const result = await axios.get(
-        `http://localhost:8080/posts/${match.url.split("/").pop()}`
+        `/api/posts/${match.url.split("/").pop()}`
       );
       console.log(result);
-      setPostData(result.data.content);
+      setPostData(result.data);
     } catch (err) {
       console.log(err);
     }
@@ -28,15 +29,27 @@ const Post = ({ match }) => {
       className="post"
       style={{
         boxSizing: "border-box",
-        margin: "auto",
-        marginTop: 48,
         backgroundColor: "white",
-        padding: 50,
+        padding: 24,
         borderRadius: 3,
         boxShadow: "0px 0px 5px white",
       }}
     >
-      {ReactHtmlParser(postData)}
+      <img
+        className="post-image"
+        src={postData.imageUrl}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = placeholder;
+        }}
+        alt="post-pic"
+      />
+      <h1>{postData.title}</h1>
+
+      {ReactHtmlParser(postData.content)}
+      <span style={{ marginLeft: "auto", marginBottom: -6, marginTop: "auto" }}>
+        {postData.createdAt}
+      </span>
     </div>
   );
 };

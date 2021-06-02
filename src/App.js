@@ -5,7 +5,7 @@ import PostPreview from "./components/Post-preview/Post-preview";
 import About from "./components/About/About";
 import Post from "./components/Post/Post";
 import PostForm from "./components/Post-form/Post-form";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
 
@@ -14,13 +14,12 @@ const App = (props) => {
 
   const checkLogin = async () => {
     try {
-      const result = await axios.get("http://localhost:8080/authenticate", {
+      await axios.get("/api/authenticate", {
         headers: {
           authorization: localStorage.token,
         },
       });
-      console.log(result.data);
-      if (result.data) setIsLoggedIn(true);
+      setIsLoggedIn(true);
     } catch (err) {
       if (err.response && err.response.status === 403) logout(setIsLoggedIn);
       console.log(err);
@@ -87,7 +86,6 @@ const App = (props) => {
             exact
             render={(props) => <About {...props} isLoggedIn={isLoggedIn} />}
           />
-          <Redirect from="*" to="/" />
         </div>
       </div>
     </Router>

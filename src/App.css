@@ -9,7 +9,11 @@
 }
 
 body {
-  background-image: url("./images/1295942.jpg");
+  background: url("./images/1295942.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   margin: 0px;
 }
 
@@ -53,6 +57,9 @@ body {
 }
 
 @media only screen and (max-width: 900px) {
+  .button {
+    width: 120px;
+  }
   .container {
     width: 95%;
   }
@@ -68,9 +75,7 @@ body {
   .container {
     width: 95%;
   }
-  .header {
-    display: none;
-  }
+
   .editor-container {
     margin-top: 0px;
   }

@@ -1,12 +1,16 @@
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import placeholder from "../../images/placeholder.png";
 import { withRouter } from "react-router-dom";
 import "./Post-card-big.css";
 
 const PostCardBig = ({ post, isLoggedIn, deletePost, history }) => {
   return post ? (
     <div className="post-card-big">
-      <div className="image-container-big">
+      <div
+        className="image-container-big"
+        style={{ borderBottom: "1px solid lightgrey" }}
+      >
         {isLoggedIn && (
           <div className="overlay">
             <EditIcon
@@ -23,8 +27,7 @@ const PostCardBig = ({ post, isLoggedIn, deletePost, history }) => {
           src={post.imageUrl}
           onError={(e) => {
             e.target.onerror = null;
-            e.target.src =
-              "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png";
+            e.target.src = placeholder;
           }}
           alt="post-pic"
           className="image-big"

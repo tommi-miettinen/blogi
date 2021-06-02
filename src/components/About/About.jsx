@@ -1,6 +1,6 @@
 import "./About.css";
 
-const About = () => (
+const About = (props) => (
   <div className="about">
     <p>{`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed. Ornare massa eget egestas purus. Erat velit scelerisque in dictum non. Diam quam nulla porttitor massa id neque aliquam. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Feugiat nisl pretium fusce id velit ut tortor pretium. Lacus viverra vitae congue eu consequat ac felis. Felis eget velit aliquet sagittis id. Ut venenatis tellus in metus vulputate. Aliquet bibendum enim facilisis gravida neque convallis a. Sit amet dictum sit amet justo.
 

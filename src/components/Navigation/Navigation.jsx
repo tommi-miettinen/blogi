@@ -1,6 +1,7 @@
 import Logo from "../../logo/cropped-logo-1.png";
 import axios from "axios";
 import LoginForm from "../Login-form/Login-form";
+import { logout } from "../../utils/logout";
 import { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import "./Navigation.css";
@@ -16,7 +17,7 @@ const Navigation = ({ isLoggedIn, setIsLoggedIn, history }) => {
 
   const checkIfUserExists = async () => {
     try {
-      const result = await axios.get("http://localhost:8080/users");
+      const result = await axios.get("/api/users");
       if (result.data) {
         setUserExists(true);
       }
@@ -33,27 +34,43 @@ const Navigation = ({ isLoggedIn, setIsLoggedIn, history }) => {
       </div>
       <ul>
         <button className="button" onClick={() => history.push("/about")}>
-          Tietoa minusta
+          Tietoa
         </button>
         {isLoggedIn ? (
-          <button
-            onClick={() => history.push("/post")}
-            className="button"
-            style={{ backgroundColor: "#f7aa35", borderColor: "#f7aa35" }}
-          >
-            Kirjoita uusi
-          </button>
+          <>
+            <button
+              onClick={() => history.push("/post")}
+              className="button"
+              style={{ backgroundColor: "#f7aa35", borderColor: "#f7aa35" }}
+            >
+              Luo postaus
+            </button>
+            <button
+              onClick={() => {
+                logout(setIsLoggedIn);
+                history.push("/");
+              }}
+              className="button"
+              style={{ backgroundColor: "black", borderColor: "black" }}
+            >
+              Kirjaudu ulos
+            </button>
+          </>
         ) : (
           <button
             onClick={() => setLoginFormVisible(!loginFormVisible)}
             className="button"
-            style={{ backgroundColor: "#f7aa35", borderColor: "#f7aa35" }}
+            style={{
+              backgroundColor: "#f7aa35",
+              borderColor: "#f7aa35",
+            }}
           >
             Kirjaudu sisään
           </button>
         )}
         {loginFormVisible && (
           <LoginForm
+            history={history}
             userExists={userExists}
             setIsLoggedIn={setIsLoggedIn}
             isLoggedIn={isLoggedIn}

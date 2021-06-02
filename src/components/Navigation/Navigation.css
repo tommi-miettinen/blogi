@@ -35,7 +35,22 @@
   margin-left: auto;
 }
 
+@media only screen and (max-width: 700px) {
+  .header {
+    display: none;
+  }
+
+  .navigation ul .button {
+    width: 90px;
+    padding: 6px 12px;
+    text-align: center;
+  }
+}
+
 @media only screen and (max-width: 620px) {
+  .navigation {
+    max-width: 100%;
+  }
   .header {
     display: none;
   }
